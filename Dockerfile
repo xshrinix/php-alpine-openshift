@@ -78,6 +78,8 @@ RUN apk --no-cache --update add imagemagick-dev imagemagick libjpeg-turbo libgom
 # Cleanup
 RUN rm -rf /usr/src/*
 
+RUN mkdir -p /var/www/html
+
 RUN chgrp -R 0 /var/www/html && chmod -R g=u /var/www/html
 
 COPY ./apache/ports.conf /etc/apache2/ports.conf
