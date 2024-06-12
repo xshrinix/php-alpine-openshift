@@ -97,7 +97,7 @@ WORKDIR /var/www/html
 RUN chmod +x perm.sh
 
 
-ENTRYPOINT ["/perm.sh"]
+ENTRYPOINT ["./perm.sh"]
 
 
 
