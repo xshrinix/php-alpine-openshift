@@ -80,7 +80,8 @@ RUN rm -rf /usr/src/*
 
 RUN mkdir -p /var/www/html
 
-RUN chgrp -R 0 /var/www/html && chmod -R g=u /var/www/html
+#RUN chgrp -R 0 /var/www/html && chmod -R g=u /var/www/html
+RUN chgrp -R 0 /var/www && chmod -R g=u /var/www
 
 COPY ./apache/ports.conf /etc/apache2/ports.conf
 COPY ./apache/httpd.conf /etc/apache2/httpd.conf
