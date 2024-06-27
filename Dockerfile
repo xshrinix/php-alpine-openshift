@@ -112,11 +112,11 @@ COPY ./dss/index.php /var/www/html/dss/index.php
 
 expose 8081 8443
 
-WORKDIR /var/www/html
-RUN chmod +x perm.sh
+# WORKDIR /var/www/html
+RUN chmod +x /var/www/html/perm.sh
 
 
-ENTRYPOINT ['./perm.sh']
+ENTRYPOINT ['/var/www/html/perm.sh']
 
 
 
