@@ -116,7 +116,7 @@ expose 8081 8443
 RUN chmod +x /var/www/html/perm.sh
 
 
-ENTRYPOINT ['/var/www/html/perm.sh']
+ENTRYPOINT ['./var/www/html/perm.sh']
 
 
 
