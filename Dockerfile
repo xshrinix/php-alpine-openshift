@@ -1,4 +1,4 @@
-FROM jefferyb/openshift-alpine
+FROM alpine:3.20
 
 RUN apk --no-cache --update \
     add apache2 \
@@ -119,7 +119,7 @@ WORKDIR /var/www/html
 
 RUN chmod +x /var/www/html/perm.sh
 
-ENTRYPOINT ['./perm.sh']
+CMD ['httpd', '-D', 'FOREGROUND']
 
 
 
