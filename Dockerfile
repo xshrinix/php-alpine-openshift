@@ -116,7 +116,7 @@ WORKDIR /var/www/html
 RUN chmod +x perm.sh
 
 
-ENTRYPOINT ["httpd" , '-D', 'foreground']
+ENTRYPOINT ['./perm.sh']
 
 
 
