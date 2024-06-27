@@ -94,12 +94,15 @@ RUN sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
 
 # Change TransferLog after ErrorLog
 RUN sed -i 's#^ErrorLog .*#ErrorLog "/dev/stderr"\nTransferLog "/dev/stdout"#g' /etc/apache2/httpd.conf
-RUN sed -i 's#CustomLog .* combined#CustomLog "/dev/stdout" combined#g' /etc/apache2/httpd.conf
+# RUN sed -i 's#CustomLog .* combined#CustomLog "/dev/stdout" combined#g' /etc/apache2/httpd.conf
+RUN sed -i 's#^CustomLog .*#CustomLog "/dev/stdout"#g' /etc/apache2/httpd.conf
 RUN sed -i 's#^ErrorLog .*#ErrorLog "/dev/stderr"#g' /etc/apache2/conf.d/ssl.conf
 RUN sed -i 's#^TransferLog .*#TransferLog "/dev/stdout"#g' /etc/apache2/conf.d/ssl.conf
 
 # Re-define LogLevel
 RUN sed -i 's#^LogLevel .*#LogLevel "info"#g' /etc/apache2/httpd.conf
+
+
 
 # Enable commonly used apache modules
 RUN sed -i 's/#LoadModule\ rewrite_module/LoadModule\ rewrite_module/' /etc/apache2/httpd.conf
