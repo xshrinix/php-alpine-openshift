@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM jefferyb/openshift-alpine
 
 RUN apk --no-cache --update \
     add apache2 \
