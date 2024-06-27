@@ -95,7 +95,7 @@ RUN sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
 # Change TransferLog after ErrorLog
 RUN sed -i 's#^ErrorLog .*#ErrorLog "/dev/stderr"\nTransferLog "/dev/stdout"#g' /etc/apache2/httpd.conf
 # RUN sed -i 's#CustomLog .* combined#CustomLog "/dev/stdout" combined#g' /etc/apache2/httpd.conf
-RUN sed -i 's#^CustomLog .*#CustomLog "/dev/stdout"#g' /etc/apache2/httpd.conf
+# RUN sed -i 's#^CustomLog .*#CustomLog "/dev/stdout"#g' /etc/apache2/httpd.conf
 RUN sed -i 's#^ErrorLog .*#ErrorLog "/dev/stderr"#g' /etc/apache2/conf.d/ssl.conf
 RUN sed -i 's#^TransferLog .*#TransferLog "/dev/stdout"#g' /etc/apache2/conf.d/ssl.conf
 
@@ -115,9 +115,9 @@ COPY ./dss/index.php /var/www/html/dss/index.php
 
 expose 8081 8443
 
-RUN chmod +x /var/www/html/perm.sh
-
 WORKDIR /var/www/html
+
+RUN chmod +x /var/www/html/perm.sh
 
 ENTRYPOINT ['./perm.sh']
 
