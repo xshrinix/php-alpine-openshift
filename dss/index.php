@@ -1,6 +1,6 @@
 <?php 
   
-  $servername = "mysql.xtreme-signage-app.svc.cluster.local"; 
+  $servername = "10.217.5.25"; 
   $username = "root"; 
   $password = "Admin@1234"; 
   $databasename = "signage"; 
