@@ -88,7 +88,7 @@ COPY ./apache/ssl.conf /etc/apache2/conf.d/ssl.conf
 COPY ./vhosts/default.conf /etc/apache2/sites-enabled
 COPY ./php/php.ini /usr/local/etc/php/php.ini
 COPY ./php/ixed.8.3.lin /var/www/html/ixed.8.3.lin
-COPY ./www/perm.sh /var/www/html/perm.sh
+COPY ./www/perm.sh /perm.sh
 
 RUN sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
 
@@ -117,9 +117,9 @@ expose 8081 8443
 
 WORKDIR /var/www/html
 
-RUN chmod +x /var/www/html/perm.sh
+RUN chmod +x /perm.sh
 
-ENTRYPOINT ['./perm.sh']
+ENTRYPOINT ['/perm.sh']
 
 
 
