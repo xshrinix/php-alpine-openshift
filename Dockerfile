@@ -90,7 +90,7 @@ COPY ./php/php.ini /usr/local/etc/php/php.ini
 COPY ./php/ixed.8.3.lin /var/www/html/ixed.8.3.lin
 COPY ./www/perm.sh /var/www/html/perm.sh
 
-RUN sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
+# RUN sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/httpd.conf
 
 # Change TransferLog after ErrorLog
 # RUN sed -i 's#^ErrorLog .*#ErrorLog "/dev/stderr"\nTransferLog "/dev/stdout"#g' /etc/apache2/httpd.conf
