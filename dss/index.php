@@ -1,6 +1,6 @@
 <?php 
   
-  $servername = "10.217.5.25"; 
+  $servername = "10.217.4.198"; 
   $username = "root"; 
   $password = "Admin@1234"; 
   $databasename = "signage"; 
